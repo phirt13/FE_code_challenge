@@ -1,0 +1,64 @@
+html {
+  width: 40em;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1em;
+  border: 1px solid black;
+}
+body {
+  font-family: Arial;
+  width: 20em;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 1em 1em 1em;
+  border: 1px solid black;
+}
+button {
+  border: .1em solid black;
+  border-radius: .6em;
+  padding: .5em;
+}
+#edit-task, #update-task, #delete-task{
+  float: left;
+  font-size: .6em;
+  margin: 0 0 0 1em;
+}
+h1, h3 {
+  text-align: center;
+}
+header {
+  margin: 1em 0 1em 0;
+}
+li {
+  font-size: .8em;
+  text-align: center;
+  margin: .5em 0 .5em 0;
+  padding: .5em 0 .5em 0;
+  border: 1px solid black;
+  overflow: auto;
+}
+textarea {
+  font-size: 1em;
+  padding: .5em 0 .5em .25em;
+  height: 1.5em;
+  width: 15.75em;
+  float: left;
+  margin-left: .75em;
+}
+.todo-list {
+  text-align: center;
+}
+.todo-add {
+  text-align: center;
+  margin: 1em 0 0 0;
+  height: 1.5em;
+  padding: 1em;
+  border: 1px solid black;
+  overflow: auto;
+}
+#new-task-form, #close-task-form {
+  float: left;
+}
+#close-task-form {
+  margin-left: .5em;
+}

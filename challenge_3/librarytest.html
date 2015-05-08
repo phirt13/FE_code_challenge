@@ -1,0 +1,42 @@
+<script>
+(function() {
+
+  var Library = function(name, location) {
+    this.name = name;
+    this.location = location;
+    this.shelves = [];
+  };
+
+  var Shelf = function(subject) {
+    this.subject = subject;
+    this.books = [];
+  };
+
+  var Book = function(title, author, subject) {
+    this.title = title;
+    this.author = author;
+    this.subject = subject;
+  };
+
+  Library.prototype.addShelf = function(subject) {
+    this.shelves.push(new Shelf(subject));
+  };
+
+  Library.prototype.removeShelf = function() {
+    this.shelves.splice(this.shelves[i]);
+  }
+
+  Shelf.prototype.addBook = function(title, author, subject) {
+    this.books.push(new Book(title, author, subject));
+  }
+
+  Shelf.prototype.removeBook = function() {
+    this.books.splice(this.books[i]);
+  }
+  var leGrande = new Library("le grande", "Seattle");
+
+  leGrande.addShelf('ScienceFiction');
+  console.log(typeof(leGrande.shelves[0]));
+  console.log(leGrande);
+})();
+</script>
