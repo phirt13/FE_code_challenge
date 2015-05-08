@@ -32,7 +32,7 @@ textarea {
   font-size: 1em;
   padding: .5em 0 .5em .25em;
   height: 1.5em;
-  width: 15.75em;
+  width: 18.25em;
   float: left;
   margin-left: .75em;
 }
@@ -55,8 +55,8 @@ textarea {
 }
 #complete-task{
   float: left;
-  font-size: .6em;
-  margin: 0 0 0 1em;
+  font-size: .8em;
+  margin: .25em 0 0 .5em;
 }
 #complete {
   background-color: red;
