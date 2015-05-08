@@ -1,4 +1,3 @@
-<script>
 (function() {
 
   var Library = function(name, location) {
@@ -18,15 +17,40 @@
     this.subject = subject;
   };
 
-  Library.prototype.addShelf = function() {
+  Library.prototype.addShelf = function(subject) {
     this.shelves.push(new Shelf(subject));
-  };
-
-  Library.prototype.removeShelf = function(this.shelves[i]) {
-    this.shelves.splice(this.shelves[i]);
   }
 
-  var scienceFiction = new Shelf('Sciene Fiction');
-  console.log(scienceFiction);
+  Library.prototype.removeShelf = function(index) {
+    this.shelves.splice(index);
+  }
+
+  Shelf.prototype.addBook = function(title, author, subject) {
+    this.books.push(new Book(title, author, subject));
+  }
+
+  Shelf.prototype.removeBook = function(index) {
+    this.books.splice(index);
+  }
+
+  var theCityOfDreamingBooks = new Library("The City Of Dreaming Books", "Bookholm Catacombs, Zamonia");
+
+  theCityOfDreamingBooks.addShelf('Fantasy');
+  theCityOfDreamingBooks.addShelf('Self-Help');
+
+  theCityOfDreamingBooks.shelves[0].addBook("The 13 and 1/2 Lives of Captain Bluebear", "Walter Moers", "Fantasy");
+  theCityOfDreamingBooks.shelves[0].addBook("Rumo", "Walter Moers", "Fantasy");
+  theCityOfDreamingBooks.shelves[0].addBook("A Wild Ride Through The Night", "Walter Moers", "Fantasy");
+  theCityOfDreamingBooks.shelves[1].addBook("Doctrine And Covenants", "Joseph Smith", "Self-Help");
+
+  console.log(theCityOfDreamingBooks);
+  console.log(theCityOfDreamingBooks.shelves);
+
+  theCityOfDreamingBooks.removeShelf(1);
+  theCityOfDreamingBooks.shelves[0].removeBook(2);
+
+  console.log(theCityOfDreamingBooks);
+  console.log(theCityOfDreamingBooks.shelves);
+
 })();
-</script>
+
