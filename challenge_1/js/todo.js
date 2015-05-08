@@ -48,7 +48,7 @@ $(function() {
     $('#complete-task').fadeOut();
     $('li').off();
     $('textarea').each(function() {
-      $(this ).prop("disabled", false);
+      $(this).prop("disabled", false);
     });
     $newTaskButton.hide();
     $editTasksButton.hide();
@@ -58,7 +58,7 @@ $(function() {
 
 
   complete = function() {
-    $('li').click(function() {
+    $('li:not(#complete)').click(function() {
       $this = $(this);
       $('#complete-task').remove();
       $this.append('<button id="complete-task">complete</button>');
