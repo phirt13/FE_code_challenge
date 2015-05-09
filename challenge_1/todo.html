@@ -7,7 +7,6 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <link type="text/css" href="css/reset.css" rel="stylesheet"/>
 <link type="text/css" href="css/todo.css" rel="stylesheet"/>
-
 <!-- JAVASCRIPT
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <script src="js/deps/jquery.js"></script>
@@ -17,33 +16,33 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <body>
   <header class="main-title">
-    <h1>urTODO</h1>
+      <img class="circle-doggie" id="doggie" src="pic/doggie.png"/>
   </header>
   <main>
     <section class="todo-list">
-      <h3>urList</h3>
+      <h1>urTODO</h1>
       <hr/>
       <ul>
         <li>
           <textarea disabled id="task-content">Let Elko out</textarea>
         </li>
         <li>
-          <textarea disabled id="task-content">Let Elko out</textarea>
+          <textarea disabled id="task-content">Feed Elko</textarea>
         </li>
         <li>
-          <textarea disabled id="task-content">Let Elko out</textarea>
+          <textarea disabled id="task-content">Walk Elko</textarea>
         </li>
       </ul>
     </section>
     <section class="todo-add">
-      <button id="new-task-button">New Tasks</button>
-      <button id="edit-all">Edit All</button>
-      <button id="clear-complete">Clear Complete</button>
+      <button id="new-task-button">new tasks</button>
+      <button id="edit-all">change tasks</button>
+      <button id="clear-complete">clear complete</button>
       <form id="new-task-form">
         <input type="text" name="task-value" placeholder="new task" id="add-task" size="30"/>
-        <input type="submit" id="add" value="Add"/>
+        <button id="add">add</button>
       </form>
-      <button id="close-task-form">done</button>
+      <button id="close-options">done</button>
     </section>
   </main>
   <footer></footer>

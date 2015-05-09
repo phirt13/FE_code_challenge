@@ -3,7 +3,7 @@ $(function() {
   var $list = $('ul');
   var $newTaskForm = $('#new-task-form');
   var $newTaskButton = $('#new-task-button');
-  var $closeTaskButton = $('#close-task-form');
+  var $closeTaskButton = $('#close-options');
   var $editTasksButton = $('#edit-all');
   var $completeTaskButton = $('#complete-task');
   var $clearCompleteButton = $('#clear-complete');
@@ -41,7 +41,7 @@ $(function() {
   });
 
   $clearCompleteButton.click(function() {
-    $('li#complete').fadeOut();
+    $('li#complete').fadeOut(800);
   });
 
   $('#edit-all').click(function() {
