@@ -1,4 +1,4 @@
-Code Challenge
+# Code Challenge
 
-These are my answers to the Code Fellows Front End Development Accelerator Code Challenge problem set.  
+* These are my answers to the Code Fellows Front End Development Accelerator Code Challenge problem set.
 
