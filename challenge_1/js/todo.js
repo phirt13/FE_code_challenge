@@ -5,38 +5,51 @@ $(function() {
   var $newTaskButton = $('#new-task-button');
   var $closeTaskButton = $('#close-options');
   var $editTasksButton = $('#edit-all');
-  var $completeTaskButton = $('#complete-task');
   var $clearCompleteButton = $('#clear-complete');
+  var $deleteTaskButton = $('#delete-task');
 
   $newTaskForm.hide();
   $closeTaskButton.hide();
+  $deleteTaskButton.hide();
 
   $newTaskButton.click(function() {
     $newTaskButton.hide();
     $editTasksButton.hide();
-    $('#complete-task').hide();
     $clearCompleteButton.hide();
+    $('#complete-task').hide();
     $newTaskForm.fadeIn(800);
     $closeTaskButton.fadeIn(800);
   });
 
   $newTaskForm.submit(function() {
     event.preventDefault();
-    var taskText = $('input:text').val();
-    $list.append('<li><textarea disabled id="task-content">' + taskText + '</textarea></li>');
-    $('input:text').val('');
-    complete();
+    if(($('input').val() === '')) {
+    $('input').attr('placeholder', 'please create a task');
+    } else {
+      var taskText = $('input:text').val();
+      $list.append('<li><textarea disabled id="task-content">' + taskText + '</textarea></li>');
+      $('input:text').val('');
+      $('input').attr('placeholder', 'new task');
+      complete();
+    }
   });
 
   $closeTaskButton.click(function() {
     $newTaskForm.hide();
-    $closeTaskButton.hide()
+    $closeTaskButton.hide();
     $newTaskButton.fadeIn(800);
     $editTasksButton.fadeIn(800);
     $clearCompleteButton.fadeIn(800);
+    $('li').each(function() {
+      $(this).children('button').remove();
+    });
     $('textarea').each(function() {
       $(this).prop("disabled", true);
     });
+    $('textarea:not(#task-complete').each(function() {
+      $(this).attr('id', 'task-content')
+    });
+    $('input').attr('placeholder', 'new task');
     complete();
   });
 
@@ -44,17 +57,26 @@ $(function() {
     $('li#complete').fadeOut(800);
   });
 
-  $('#edit-all').click(function() {
-    $('#complete-task').fadeOut();
+  $editTasksButton.click(function() {
+    $('#complete-task').hide();
     $('li').off();
-    $('textarea').each(function() {
+    $('li').each(function() {
+      $(this).append('<button class="delete-task">del</button>');
+    });
+    $('button').filter('.delete-task').each(function() {
+      $(this).click(function() {
+        $(this).parent().remove();
+      });
+    });
+    $('textarea:not(#task-complete)').each(function() {
       $(this).prop("disabled", false);
+      $(this).attr('id', 'edit-task');
     });
     $newTaskButton.hide();
     $editTasksButton.hide();
     $clearCompleteButton.hide();
     $closeTaskButton.fadeIn(800);
-  });
+});
 
 
   complete = function() {
@@ -62,12 +84,14 @@ $(function() {
       $this = $(this);
       $('#complete-task').remove();
       $this.append('<button id="complete-task">complete</button>');
-      $('#complete-task').hide();
-      $('#complete-task').fadeIn();
-      $('#complete-task').click(function () {
+      var $completeTaskButton = $('#complete-task');
+      $completeTaskButton.hide();
+      $completeTaskButton.fadeIn();
+      $completeTaskButton.click(function () {
         $this.attr('id','complete');
+        $this.children('textarea').attr('id', 'task-complete');
         $this.off();
-        $('#complete-task').fadeOut();
+        $completeTaskButton.fadeOut();
       });
     });
   }
