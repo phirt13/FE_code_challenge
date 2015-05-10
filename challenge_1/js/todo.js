@@ -4,7 +4,7 @@ $(function() {
   var $newTaskForm = $('#new-task-form');
   var $newTaskButton = $('#new-task-button');
   var $closeTaskButton = $('#close-options');
-  var $editTasksButton = $('#edit-all');
+  var $editTasksButton = $('#edit-tasks');
   var $clearCompleteButton = $('#clear-complete');
   var $deleteTaskButton = $('#delete-task');
 
@@ -70,7 +70,7 @@ $(function() {
     });
     $('textarea:not(#task-complete)').each(function() {
       $(this).prop("disabled", false);
-      $(this).attr('id', 'edit-task');
+      $(this).attr('id', 'edit-task-content');
     });
     $newTaskButton.hide();
     $editTasksButton.hide();
