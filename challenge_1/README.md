@@ -2,7 +2,7 @@ This is challenge 1 of the FE Code Challenge problem set.
 
 Link to Heroku app:
 
-    [Heroku link](https://urtodo.herokuapp.com)
+    https://urtodo.herokuapp.com/
 
 It is an interactive todo-list app.
 
