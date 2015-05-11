@@ -1,8 +1,6 @@
 This is challenge 1 of the FE Code Challenge problem set.
 
-Link to Heroku app:
-
-    https://urtodo.herokuapp.com/
+Link to Heroku app: https://urtodo.herokuapp.com/
 
 It is an interactive todo-list app.
 
