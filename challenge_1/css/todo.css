@@ -46,7 +46,6 @@ li {
   overflow: auto;
   background-color: hsla(39, 100%, 70%, 0.7);
 }
-
 textarea {
   float: left;
   height: 1.5em;
@@ -117,10 +116,13 @@ input {
   background-color: hsla(199, 95%, 65%, 1.0);
   border: .1em solid hsla(199, 95%, 65%, 0.0);
 }
-#complete {
+.complete {
   background-color: hsla(199, 95%, 65%, 1.0);
   opacity: .6;
   resize: none;
+}
+ .todo-task:hover {
+  box-shadow: .01em .01em 1em hsla(0, 0%, 75%, .8);
 }
 #edit-task {
 
