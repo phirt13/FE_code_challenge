@@ -1,6 +1,6 @@
 $(function() {
 
-  var $list = $('ul');
+  var $list = $('#active-tasks');
   var $newTaskForm = $('#new-task-form');
   var $newTaskButton = $('#new-task-button');
   var $closeTaskButton = $('#close-options');
@@ -19,18 +19,20 @@ $(function() {
     $('#complete-task').hide();
     $newTaskForm.fadeIn(800);
     $closeTaskButton.fadeIn(800);
+    $('.complete').off();
   });
 
   $newTaskForm.submit(function() {
     event.preventDefault();
     if(($('input').val() === '')) {
-    $('input').attr('placeholder', 'please create a task');
+    $('input').attr('placeholder', 'cannot add empty tasks');
     } else {
       var taskText = $('input:text').val();
-      $list.append('<li><textarea disabled id="task-content">' + taskText + '</textarea></li>');
+      $list.append('<li class="todo-task"><textarea disabled id="task-content">' + taskText + '</textarea></li>');
       $('input:text').val('');
       $('input').attr('placeholder', 'new task');
       complete();
+      $('.complete').off();
     }
   });
 
@@ -51,10 +53,11 @@ $(function() {
     });
     $('input').attr('placeholder', 'new task');
     complete();
+    $('.complete').off();
   });
 
   $clearCompleteButton.click(function() {
-    $('li#complete').fadeOut(800);
+    $('.complete').fadeOut(800);
   });
 
   $editTasksButton.click(function() {
@@ -72,12 +75,13 @@ $(function() {
       $(this).prop("disabled", false);
       $(this).attr('id', 'edit-task-content');
     });
+
     $newTaskButton.hide();
     $editTasksButton.hide();
     $clearCompleteButton.hide();
     $closeTaskButton.fadeIn(800);
-});
 
+  });
 
   complete = function() {
     $('li:not(#complete)').click(function() {
@@ -88,10 +92,15 @@ $(function() {
       $completeTaskButton.hide();
       $completeTaskButton.fadeIn();
       $completeTaskButton.click(function () {
-        $this.attr('id','complete');
+        var content = $this.text();
+        $this.attr('class','complete');
         $this.children('textarea').attr('id', 'task-complete');
+        $this.remove();
+        $('#finished-tasks').append($this);
+        $this.hide();
+        $this.fadeIn(800);
         $this.off();
-        $completeTaskButton.fadeOut();
+        $completeTaskButton.remove();
       });
     });
   }
