@@ -49,7 +49,7 @@ $(function() {
       $(this).prop("disabled", true);
     });
     $('textarea:not(#task-complete').each(function() {
-      $(this).attr('id', 'task-content')
+      $(this).attr('id', 'task-content');
     });
     $('input').attr('placeholder', 'new task');
     complete();
@@ -75,24 +75,21 @@ $(function() {
       $(this).prop("disabled", false);
       $(this).attr('id', 'edit-task-content');
     });
-
     $newTaskButton.hide();
     $editTasksButton.hide();
     $clearCompleteButton.hide();
     $closeTaskButton.fadeIn(800);
-
   });
 
-  complete = function() {
+  function complete() {
     $('li:not(#complete)').click(function() {
-      $this = $(this);
+      var $this = $(this);
       $('#complete-task').remove();
       $this.append('<button id="complete-task">complete</button>');
       var $completeTaskButton = $('#complete-task');
       $completeTaskButton.hide();
       $completeTaskButton.fadeIn();
       $completeTaskButton.click(function () {
-        var content = $this.text();
         $this.attr('class','complete');
         $this.children('textarea').attr('id', 'task-complete');
         $this.remove();
