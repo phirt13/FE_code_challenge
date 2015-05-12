@@ -1,4 +1,4 @@
-This is challenge 2 of the FE Code Challenge problem set.
+###Challenge 2 of the FE Code Challenge problem set.
 
 It is a basic HTTP server built in Node.js.
 

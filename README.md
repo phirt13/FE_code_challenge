@@ -1,4 +1,4 @@
-## Code Fellows: Code Challenge
+## CodeFellows: Code Challenge
 
 These are my answers to the Front-End DA problem set.
 
