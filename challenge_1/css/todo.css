@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: Helvetica;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   letter-spacing: .02em;
   width: 20em;
   margin-top: 1em;
@@ -46,6 +46,7 @@ li {
   overflow: auto;
   background-color: hsla(39, 100%, 70%, 0.7);
 }
+
 textarea {
   float: left;
   height: 1.5em;
@@ -83,15 +84,13 @@ button:hover {
 input {
   height: 2em;
   outline: none;
+  border: none;
 }
 
-#add:hover {
-  background-color: hsla(39, 100%, 70%, 0.7);
-  border: .1em solid hsla(39, 100%, 70%, 0.0);
-}
 .todo-list {
   text-align: center;
 }
+
 .todo-add {
   text-align: center;
   margin: 1em 0 0 0;
@@ -100,40 +99,51 @@ input {
   background-color: hsla(0, 0%, 75%, 1.0);
   overflow: auto;
 }
+
+.complete {
+  background-color: hsla(199, 95%, 65%, 1.0);
+  opacity: .6;
+  resize: none;
+}
+
+ .todo-task:hover {
+  box-shadow: .01em .01em 1em hsla(0, 0%, 75%, .8);
+}
+
 #new-task-form {
   float: left;
 }
-#close-task-form {
-  margin-left: .5em;
+
+#close-options {
+  margin-right: 1.25em;
 }
+
 #complete-task{
   float: left;
   font-size: .8em;
   margin: .25em 0 0 .4em;
   border: .1em solid hsla(0, 0%, 100%, 1.0);
 }
+
 #complete-task:hover {
   background-color: hsla(199, 95%, 65%, 1.0);
   border: .1em solid hsla(199, 95%, 65%, 0.0);
 }
-.complete {
-  background-color: hsla(199, 95%, 65%, 1.0);
-  opacity: .6;
-  resize: none;
-}
- .todo-task:hover {
-  box-shadow: .01em .01em 1em hsla(0, 0%, 75%, .8);
-}
-#edit-task {
 
+#add:hover {
+  background-color: hsla(39, 100%, 70%, 0.7);
+  border: .1em solid hsla(39, 100%, 70%, 0.0);
 }
-#task-content {
-  resize: none;
-}
-#task-complete {
-  resize: none;
-}
+
 #clear-complete:hover {
   background-color: hsla(199, 95%, 65%, 1.0);
   border: .1em solid hsla(199, 95%, 65%, 0.0);
+}
+
+#task-content {
+  resize: none;
+}
+
+#task-complete {
+  resize: none;
 }
