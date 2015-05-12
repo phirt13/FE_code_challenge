@@ -1,4 +1,4 @@
-This is challenge 1 of the FE Code Challenge problem set.
+###Challenge 1 of the FE Code Challenge problem set.
 
 Link to Heroku app: https://urtodo.herokuapp.com/
 
